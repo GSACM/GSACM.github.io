@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ACM - Student Organization</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to ACM</h1>
+        <p>The Association for Computing Machinery - Empowering Students in Tech</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About</a>
+        <a href="./events.html">Events</a>
+        <a href="./join.html">Join Us</a>
+        <a href="./resources.html">Resources</a>
+        <a href="./archive.html">Archive</a>
+        <a href="./contact.html">Contact</a>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="container">
+        <!-- About ACM Section -->
+        <section id="about">
+            <h2>About ACM</h2>
+            <p>The Association for Computing Machinery (ACM) is a global organization that fosters professional development
+                and community for students interested in computer science and technology. Our student chapter provides resources,
+                workshops, networking, and opportunities for growth in the tech field.</p>
+        </section>
+
+        <!-- Upcoming Events Section -->
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li><strong>Hackathon 2025:</strong> Join us for an exciting coding competition! <em>November </em></li>
+                <li><strong>Tech Talk: AI & Machine Learning:</strong> Learn from industry experts. <em>December </em></li>
+                <li><strong>CodeLab Workshops:</strong> Hands-on coding sessions for beginners and experts. <em>Every other Tuesday</em></li>
+            </ul>
+        </section>
+
+        <!-- Join Us Section -->
+        <section id="join">
+            <h2>Join ACM</h2>
+            <p>If you're passionate about tech and want to connect with like-minded individuals, consider joining our chapter! 
+                We welcome students from all disciplines. Fill out the form below to become a member.</p>
+            <button onclick="window.location.href='https://georgiasouthern.presence.io/organization/association-for-computing-machinery-2'">Eagle Engage </button>
+            <button onclick="window.location.href='https://groupme.com/join_group/65871319/KRc8iUOk'">GroupMe </button>
+            <button onclick="window.location.href='https://discord.gg/s2cfxsVJ8Y'">Discord </button>
+        </section>
+        
+         <!-- Coding Challenges / Hackathon Info Section -->
+         <section id="hackathon-info">
+            <h2>ACM x TDA Hackathon</h2>
+            <p>
+                The ACM is hosting a hackathon in conjunction with the TDA. This event will take place on 
+                <strong>Saturday, October 18th</strong> and consists of creating an app of your choosing 
+                through a series of sprints. 
+            </P>
+            <h3>What To Expect?</h3>
+         </section>
+        
+        <!-- Contact form -->
+        <section id ="contact">
+            <h2>Contact Us</h2>
+            <p>Have questions or comments? Feel free to reach out to us!</p>
+           <div class="col-md-8 col-sm-10 col-md-offset-2">
+        <div class="contact-card wow fadeInUp" data-wow-delay="0.3s">
+          <form id="contact-form" action="https://formspree.io/f/xanpdjdg" method="POST" novalidate>
+
+            <!-- subject shown in email -->
+            <input type="hidden" name="_subject" value="Portfolio contact from hs14235.github.io">
+            <!-- where to redirect if JS disabled -->
+            <input type="hidden" name="_next" value="https://hs14235.github.io/#contact">
+
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-floating mb-3">
+                  <input type="text" id="name_field" name="name" class="form-control fancy-input" placeholder="Your name" required>
+                  <label for="name_field">Name</label>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-floating mb-3">
+                  <input type="email" id="email_field" name="email" class="form-control fancy-input" placeholder="you@example.com" required>
+                  <label for="email_field">Email</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-floating mb-3">
+              <input type="text" id="subject_field" name="subject" class="form-control fancy-input" placeholder="Subject" required>
+              <label for="subject_field">Subject</label>
+            </div>
+
+            <div class="form-floating mb-4">
+              <textarea id="message_area" name="message" class="form-control fancy-input" style="height: 140px" placeholder="Your message..." required></textarea>
+              <label for="message_area">Message</label>
+            </div>
+
+            <div class="text-center">
+              <button id="submitBtn" type="submit" class="btn-custom btn-color btn-pill">
+                <span class="btn-spinner" aria-hidden="true"></span>
+                Send Message
+              </button>
+            </div>
+
+            <div class="form-feedback" aria-live="polite" role="status" id="formFeedback"></div>
+          </form>
+
+        
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
