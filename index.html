@@ -2,30 +2,16 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ACM - Student Organization</title>
-    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="header.js"></script>
 </head>
 
 <body>
-
-    <header>
-        <h1>Welcome to ACM</h1>
-        <p>The Association for Computing Machinery - Empowering Students in Tech</p>
-    </header>
-
-    <!-- Navigation Bar -->
-    <nav>
-        <a href="./index.html">Home</a>
-        <a href="Pages/about.html">About</a>
-        <a href="Pages/events.html">Events</a>
-        <a href="Pages/join.html">Join Us</a>
-        <a href="Pages/resources.html">Resources</a>
-        <a href="Pages/archive.html">Archive</a>
-        <a href="Pages/contact.html">Contact</a>
-    </nav>
+   <primary-header></primary-header>
 
     <!-- Main Content Section -->
     <div class="container">
@@ -52,29 +38,14 @@
             <h2>Join ACM</h2>
             <p>If you're passionate about tech and want to connect with like-minded individuals, consider joining our chapter! 
                 We welcome students from all disciplines. Fill out the form below to become a member.</p>
-            <button onclick="window.location.href='https://georgiasouthern.presence.io/organization/association-for-computing-machinery-2'">Eagle Engage </button>
-            <button onclick="window.location.href='https://groupme.com/join_group/65871319/KRc8iUOk'">GroupMe </button>
-            <button onclick="window.location.href='https://discord.gg/s2cfxsVJ8Y'">Discord </button>
+            <button onclick="window.location.href='https://www.acm.org/join'">Join Now</button>
         </section>
-        
-         <!-- Coding Challenges / Hackathon Info Section -->
-         <section id="hackathon-info">
-            <h2>ACM x TDA Hackathon</h2>
-            <p>
-                The ACM is hosting a hackathon in conjunction with the TDA. This event will take place on 
-                <strong>Saturday, October 18th</strong> and consists of creating an app of your choosing 
-                through a series of sprints. 
-            </P>
-            <h3>What To Expect?</h3>
-         </section>
-        
+
         <!-- Contact form -->
-        <section id ="contact">
-            <h2>Contact Us</h2>
-            <p>Have questions or comments? Feel free to reach out to us!</p>
            <div class="col-md-8 col-sm-10 col-md-offset-2">
         <div class="contact-card wow fadeInUp" data-wow-delay="0.3s">
-          <form id="contact-form" action="https://formspree.io/f/xanpdjdg" method="POST" novalidate>
+          <!-- https://formspree.io/forms/mgvzbgqr/submissions  -->
+          <form id="contact-form" action="https://formspree.io/f/mgvzbgqr" method="POST" novalidate>
 
             <!-- subject shown in email -->
             <input type="hidden" name="_subject" value="Portfolio contact from hs14235.github.io">
@@ -118,10 +89,15 @@
 
         
         </div>
+
+      
     </div>
-
-
-
 </body>
 
 </html>
+
+
+
+
+
+
