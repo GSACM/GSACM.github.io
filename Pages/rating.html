@@ -6,17 +6,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ACM - Student Organization</title>
-    <link rel="stylesheet" type="text/css" href="../CSS/style.css">
     <script src="/header.js"></script>
 </head>
 
 <body>
     <primary-header></primary-header>
 
-    <!-- Main Content Section -->
     <div class="container">
-    
+        <section id="rating">
+
+            <h2>Surveyed Professor and TA Ratings</h2>
+
+            <!-- Search box -->
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Search by name, class, or comments..."
+                style="width:100%; padding:8px; margin-bottom:20px;"
+            >
+
+            <!-- Plain HTML table (no CSS needed) -->
+            <table id="ratingTable" border="1" cellspacing="0" cellpadding="8" width="100%">
+                <thead>
+                    <tr>
+                        <th data-sort="text">Name</th>
+                        <th data-sort="text">Professor/TA</th>
+                        <th data-sort="number">Enjoyment Rating</th>
+                        <th data-sort="number">Difficulty Rating</th>
+                        <th data-sort="text">Classes Taught</th>
+                        <th data-sort="text">Comments</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+					<tr>
+						<td>Daniel Gray</td>
+						<td>Professor</td>
+						<td>5</td>
+						<td>3</td>
+						<td>MATH 2130</td>
+						<td>
+							One of the more complicated math classes I've taken due to many rules to know by name, 
+							but after a bit it all clicked and started making a lot of sense. Great with communication 
+							and will take the time to answer any questions students have about the content if they ask.
+						</td>
+					</tr>
+
+					<tr>
+						<td>Chris Smith</td>
+						<td>Professor</td>
+						<td>4</td>
+						<td>1.5</td>
+						<td>ENGL 2135</td>
+						<td>
+							His class was rather easy however you needed to make sure to read the long book he makes 
+							you buy as each week requires a discussion post on the 70ish page chapter.
+						</td>
+					</tr>
+
+					<tr>
+						<td>Zheni Utic</td>
+						<td>Professor</td>
+						<td>4</td>
+						<td>2</td>
+						<td>STAT 1401</td>
+						<td>
+							Majority of the grade for the class was based on tests but those weren't too bad. 
+							Solid professor overall and answered questions fairly thoroughly.
+						</td>
+					</tr>
+
+					<tr>
+						<td>Hao Zhang</td>
+						<td>Professor</td>
+						<td>4</td>
+						<td>3</td>
+						<td>IT 1130</td>
+						<td>
+							Tests are a solid mix of multiple choice and open response questions. Notes can go by very 
+							quickly and he doesn't post them online anywhere, so be sure to pay attention in class. 
+							If you have a question and he can't figure it out first try then he isn't much more helpful 
+							after that.
+						</td>
+					</tr>
+				</tbody>
+            </table>
+
+        </section>
     </div>
+
+
+    <!-- JS SEARCH + SORT (works with plain HTML) -->
+    <script>
+    /* SEARCH FILTER */
+    document.getElementById("searchInput").addEventListener("keyup", function () {
+        let filter = this.value.toLowerCase();
+        let rows = document.querySelectorAll("#ratingTable tbody tr");
+
+        rows.forEach(row => {
+            let text = row.innerText.toLowerCase();
+            row.style.display = text.includes(filter) ? "" : "none";
+        });
+    });
+
+    /* SORTING (includes last-name sort on column 0) */
+    document.querySelectorAll("#ratingTable th").forEach((header, index) => {
+        header.addEventListener("click", () => {
+            let tbody = document.querySelector("#ratingTable tbody");
+            let rows = Array.from(tbody.querySelectorAll("tr"));
+            let sortType = header.getAttribute("data-sort");
+            let ascending = header.classList.toggle("asc");
+
+            rows.sort((rowA, rowB) => {
+                let cellA = rowA.children[index].innerText.trim();
+                let cellB = rowB.children[index].innerText.trim();
+
+                /* Sort NAME by LAST NAME */
+                if (index === 0) {
+                    let lastA = cellA.split(" ").slice(-1)[0].toLowerCase();
+                    let lastB = cellB.split(" ").slice(-1)[0].toLowerCase();
+
+                    return ascending
+                        ? lastA.localeCompare(lastB)
+                        : lastB.localeCompare(lastA);
+                }
+
+                if (sortType === "number") {
+                    return ascending ? cellA - cellB : cellB - cellA;
+                }
+
+                return ascending
+                    ? cellA.localeCompare(cellB)
+                    : cellB.localeCompare(cellA);
+            });
+
+            tbody.innerHTML = "";
+            rows.forEach(row => tbody.appendChild(row));
+        });
+    });
+    </script>
+
 </body>
 
 </html>
