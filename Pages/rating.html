@@ -99,53 +99,81 @@
 
     <!-- JS SEARCH + SORT (works with plain HTML) -->
     <script>
-    /* SEARCH FILTER */
-    document.getElementById("searchInput").addEventListener("keyup", function () {
-        let filter = this.value.toLowerCase();
-        let rows = document.querySelectorAll("#ratingTable tbody tr");
+		/* SEARCH FILTER */
+		document.getElementById("searchInput").addEventListener("keyup", function () {
+			let filter = this.value.toLowerCase();
+			let rows = document.querySelectorAll("#ratingTable tbody tr");
 
-        rows.forEach(row => {
-            let text = row.innerText.toLowerCase();
-            row.style.display = text.includes(filter) ? "" : "none";
-        });
-    });
+			rows.forEach(row => {
+				let text = row.innerText.toLowerCase();
+				row.style.display = text.includes(filter) ? "" : "none";
+			});
+		});
 
-    /* SORTING (includes last-name sort on column 0) */
-    document.querySelectorAll("#ratingTable th").forEach((header, index) => {
-        header.addEventListener("click", () => {
-            let tbody = document.querySelector("#ratingTable tbody");
-            let rows = Array.from(tbody.querySelectorAll("tr"));
-            let sortType = header.getAttribute("data-sort");
-            let ascending = header.classList.toggle("asc");
+		/* SORTING with LAST NAME + three-state sorting + arrows */
+		const tbody = document.querySelector("#ratingTable tbody");
+		// Store original order
+		const originalRows = Array.from(tbody.querySelectorAll("tr"));
 
-            rows.sort((rowA, rowB) => {
-                let cellA = rowA.children[index].innerText.trim();
-                let cellB = rowB.children[index].innerText.trim();
+		document.querySelectorAll("#ratingTable th").forEach((header, index) => {
+			// Initialize sort state: 0 = original, 1 = asc, 2 = desc
+			header.dataset.sortState = "0";
 
-                /* Sort NAME by LAST NAME */
-                if (index === 0) {
-                    let lastA = cellA.split(" ").slice(-1)[0].toLowerCase();
-                    let lastB = cellB.split(" ").slice(-1)[0].toLowerCase();
+			header.addEventListener("click", () => {
+				let rows = Array.from(tbody.querySelectorAll("tr"));
+				let sortType = header.getAttribute("data-sort");
+				let state = parseInt(header.dataset.sortState);
 
-                    return ascending
-                        ? lastA.localeCompare(lastB)
-                        : lastB.localeCompare(lastA);
-                }
+				// Clear arrows and reset states on other headers
+				document.querySelectorAll("#ratingTable th").forEach(h => {
+					if (h !== header) {
+						h.textContent = h.textContent.replace(/ ▲| ▼/g, '');
+						h.dataset.sortState = "0";
+					}
+				});
 
-                if (sortType === "number") {
-                    return ascending ? cellA - cellB : cellB - cellA;
-                }
+				// Determine next state
+				state = (state + 1) % 3;
+				header.dataset.sortState = state;
 
-                return ascending
-                    ? cellA.localeCompare(cellB)
-                    : cellB.localeCompare(cellA);
-            });
+				// Update arrow
+				header.textContent = header.textContent.replace(/ ▲| ▼/g, '');
+				if (state === 1) header.textContent += " ▲"; // ascending
+				else if (state === 2) header.textContent += " ▼"; // descending
 
-            tbody.innerHTML = "";
-            rows.forEach(row => tbody.appendChild(row));
-        });
-    });
-    </script>
+				if (state === 0) {
+					// Original order
+					tbody.innerHTML = "";
+					originalRows.forEach(row => tbody.appendChild(row));
+					return;
+				}
+
+				// Sort rows
+				rows.sort((rowA, rowB) => {
+					let cellA = rowA.children[index].innerText.trim();
+					let cellB = rowB.children[index].innerText.trim();
+
+					// Name column: last-name sort
+					if (index === 0) {
+						let lastA = cellA.split(" ").slice(-1)[0].toLowerCase();
+						let lastB = cellB.split(" ").slice(-1)[0].toLowerCase();
+						return state === 1 ? lastA.localeCompare(lastB) : lastB.localeCompare(lastA);
+					}
+
+					// Number columns
+					if (sortType === "number") {
+						return state === 1 ? cellA - cellB : cellB - cellA;
+					}
+
+					// Text columns
+					return state === 1 ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+				});
+
+				tbody.innerHTML = "";
+				rows.forEach(row => tbody.appendChild(row));
+			});
+		});
+	</script>
 
 </body>
 
