@@ -81,9 +81,10 @@ body {
             bottom: 0;
             width: 100%;
         }
-        .board-img {
+        board-img {
             width: 180px;
             height: 180px;
             object-fit: cover;
             border-radius: 8px;
         }
+
