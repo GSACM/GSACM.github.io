@@ -87,5 +87,11 @@ body {
             object-fit: cover;
             border-radius: 8px;
         }
+        .challenge-img {
+            transform: scale(0.6);
+            transform-origin: top left;
+        }
+
+
 
 
