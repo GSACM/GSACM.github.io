@@ -19,7 +19,7 @@ class PrimaryHeader extends HTMLElement {
         <li>
           <a href="#">More</a>
           <ul class="dropdown">
-            <li><a href="/Pages/codingCh.html">Coding Challenges</a></li>
+            <li><a href="/Pages/challenges.html">Coding Challenges</a></li>
             <li><a href="/Pages/careers.html">Careers</a></li>
             <li><a href="/Pages/members.html">Meet The Members</a></li>
             <li><a href="/Pages/board.html">Meet The Board</a></li>
