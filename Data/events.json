@@ -20,7 +20,19 @@
   {
     "title": "Executive Board Elections",
     "link": "https://georgiasouthern.presence.io/event/acm-meeting-5",
-    "description": "Election of next year's executive board",
+    "description": "Election of next year’s executive board",
     "date": "March 24th"
+  },
+  {
+    "title": "Programming Workshop #3",
+    "link": "https://georgiasouthern.presence.io/event/acm-meeting-6",
+    "description": "Advanced programming workshop",
+    "date": "April 7th"
+  },
+  {
+    "title": "ACM Meeting",
+    "link": "https://georgiasouthern.presence.io/event/acm-meeting-7",
+    "description": "End-of-semester game night to relax, have fun, and celebrate the semester",
+    "date": "April 21st"
   }
 ]
