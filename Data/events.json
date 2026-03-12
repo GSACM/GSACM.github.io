@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Resume Workshop",
+    "link": "https://georgiasouthern.presence.io/event/acm-meeting-2",
+    "description": "Resume review and interview prep to get ready for the Career Fair",
+    "date": "February 10th"
+  },
+  {
+    "title": "Programming Workshop",
+    "link": "https://georgiasouthern.presence.io/event/acm-meeting-3",
+    "description": "Skill-based programming workshop with beginner and intermediate tracks",
+    "date": "February 24th"
+  },
+  {
+    "title": "Programming Workshop #2",
+    "link": "https://georgiasouthern.presence.io/event/acm-meeting-4",
+    "description": "Collaborative work session on the ACM website",
+    "date": "March 10th"
+  },
+  {
+    "title": "Executive Board Elections",
+    "link": "https://georgiasouthern.presence.io/event/acm-meeting-5",
+    "description": "Election of next year's executive board",
+    "date": "March 24th"
+  }
+]
