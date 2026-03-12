@@ -11,29 +11,36 @@
 </head>
 
 <body>
+
    <primary-header></primary-header>
 
     <!-- Main Content Section -->
     <div class="container">
-        <!-- Meet The Board -->
-        <section id="Challenges">
-            <h2>Member Challenges</h2>
-            <p>Looking for something to try in your free time? Here are a few challenges and activities you can explore to sharpen your skills, learn something new, or just have fun with technology. Give them a try and see what you can build!
-              To meet more of our members and get involved, <a href="https://discord.gg/7vUXebvc7Q" target="_blank" rel="noopener noreferrer">Discord</a> or <a href="https://groupme.com/join_group/65871319/KRc8iUOk" target="_blank" rel="noopener noreferrer">GroupMe</a>.</p>
-        </section>
+
+        <!-- Member Challenges -->
+        <div id="challenges-container"></div>
 
         <!-- Challenge One Section -->
         <section id="Challenge One">
             <h2><a href="https://gsacm.github.io/Images/Challenges/One.png" target="_blank" rel="noopener noreferrer">Challenge One</a> - Any Type</h2>
             <img src="../Images/Challenges/One.png" class="challenge-img" alt="Challenge One">
             <ul>
-                <li>(~ 5 Minutes) Brainstorm project ideas for your skill level: </li>
+                <li>(~ 5 Minutes) Brainstorm project ideas for your skill level:</li>
                 <li>(~ 45 Minutes) Attempt to get this project started:</li>
                 <li>(~ 10 Minutes) Reflect on how it went:</li>
             </ul>
         </section>
 
     </div>
+
+    <script src="../Scripts/loadsection.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadsection("challenges", "challenges-container");
+        });
+    </script>
+
 </body>
 
 </html>
