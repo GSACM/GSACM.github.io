@@ -1,5 +1,5 @@
 function loadsection(sectionKey, containerId) {
-    fetch("Data/sections.json")
+    fetch("../Data/sections.json")
         .then(res => res.json())
         .then(data => {
             if (!data[sectionKey]) return; // nothing to load
