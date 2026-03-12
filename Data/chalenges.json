@@ -1,0 +1,24 @@
+{
+  "challenges": [
+    {
+      "title": "Challenge One",
+      "type": "Any Type",
+      "image": "../Images/Challenges/One.png",
+      "link": "https://gsacm.github.io/Images/Challenges/One.png",
+      "steps": [
+        "(~ 5 Minutes) Brainstorm project ideas for your skill level:",
+        "(~ 45 Minutes) Attempt to get this project started:",
+        "(~ 10 Minutes) Reflect on how it went:"
+      ]
+    },
+    {
+      "title": "Challenge Two",
+      "type": "Web Development",
+      "steps": [
+        "(~ 10 Minutes) Design a simple webpage layout",
+        "(~ 40 Minutes) Build the page using HTML/CSS",
+        "(~ 10 Minutes) Improve styling or responsiveness"
+      ]
+    }
+  ]
+}
