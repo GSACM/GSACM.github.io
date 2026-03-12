@@ -17,28 +17,19 @@
     <!-- Main Content Section -->
     <div class="container">
 
-        <!-- Meet The Members -->
-        <section id="Members">
-            <h2>Meet The Members</h2>
-
-            <p>
-            ACM is more than just its leadership — it’s a community of students who share an interest in technology, creativity, and learning. 
-            Our members come from many different majors and experience levels, but they all share a curiosity for computing and a willingness to 
-            support one another. From collaborating on projects and attending workshops to exploring new tools and ideas, ACM members help make 
-            our organization an engaging and welcoming place for everyone. 
-
-            Whether you're writing your first line of code or already building advanced projects, there’s a place for you here. 
-            To meet more of our members and get involved, 
-            <a href="https://discord.gg/7vUXebvc7Q" target="_blank" rel="noopener noreferrer">Discord</a> 
-            or 
-            <a href="https://groupme.com/join_group/65871319/KRc8iUOk" target="_blank" rel="noopener noreferrer">GroupMe</a>.
-            </p>
-
-        </section>
+        <!-- Meet The Members  -->
+        <div id="members-container"></div>
 
     </div>
 
+    <script src="../Scripts/loadsection.js"></script>
     <script src="../Scripts/loadmembers.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadsection("meet-members", "members-container");
+        });
+    </script>
 
 </body>
 
