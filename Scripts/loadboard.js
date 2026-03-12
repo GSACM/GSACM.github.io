@@ -2,11 +2,12 @@ fetch("../Data/board.json")
 .then(response => response.json())
 .then(data => {
 
-    const container = document.getElementById("board-container");
+    const container = document.querySelector(".container");
 
-    data.forEach(member => {
+    data.forEach((member, index) => {
 
         const section = document.createElement("section");
+        section.id = `Board Member ${index + 1}`;
 
         let details = "";
         member.details.forEach(item => {
@@ -30,4 +31,5 @@ fetch("../Data/board.json")
 
     });
 
-});
+})
+.catch(err => console.error("Board failed to load:", err));
