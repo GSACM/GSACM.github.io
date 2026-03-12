@@ -1,0 +1,25 @@
+[
+  {
+    "name": "John Doe",
+    "linkedin": "https://www.linkedin.com",
+    "image": "../Images/Members/blank.png",
+    "details": [
+      "Computer Science",
+      "Senior",
+      "Favorite hobby",
+      "Something interesting"
+    ]
+  },
+
+  {
+    "name": "Jane Smith",
+    "linkedin": "https://www.linkedin.com",
+    "image": "../Images/Members/blank.png",
+    "details": [
+      "Information Technology",
+      "Junior",
+      "Gaming",
+      "Interested in AI"
+    ]
+  }
+]
