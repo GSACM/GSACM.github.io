@@ -10,6 +10,22 @@ header {
   color: white;
   text-align: center;
   padding: 1rem;
+  position: relative;
+}
+
+.header-logo {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60px;
+}
+
+.left-logo {
+  left: 20px;
+}
+
+.right-logo {
+  right: 20px;
 }
 
 nav {
@@ -105,4 +121,3 @@ footer {
   height: auto;
   display: block;
 }
-
