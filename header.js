@@ -22,7 +22,7 @@ class PrimaryHeader extends HTMLElement {
         <li><a href="/Pages/join.html">Join Us</a></li>
         <li><a href="/Pages/resources.html">Resources</a></li>
         <li><a href="/Pages/archive.html">Archive</a></li>
-        <li><a href="/Pages/rating.html">Rate Professors</a></li>
+        <li><a href="/Pages/ratings.html">Rate Professors</a></li>
         <li><a href="/Pages/contact.html">Contact</a></li>
         <li>
           <a href="#">More</a>
