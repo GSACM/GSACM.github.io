@@ -27,4 +27,4 @@ function loadratings() {
         .catch(err => console.error("Failed to load ratings:", err));
 }
 
-document.addEventListener("DOMContentLoaded", loadRatings);
+document.addEventListener("DOMContentLoaded", loadratings);
