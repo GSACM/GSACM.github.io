@@ -20,24 +20,18 @@
         <!-- Member Challenges -->
         <div id="challenges-container"></div>
 
-        <!-- Challenge One Section -->
-        <section id="Challenge One">
-            <h2><a href="https://gsacm.github.io/Images/Challenges/One.png" target="_blank" rel="noopener noreferrer">Challenge One</a> - Any Type</h2>
-            <img src="../Images/Challenges/One.png" class="challenge-img" alt="Challenge One">
-            <ul>
-                <li>(~ 5 Minutes) Brainstorm project ideas for your skill level:</li>
-                <li>(~ 45 Minutes) Attempt to get this project started:</li>
-                <li>(~ 10 Minutes) Reflect on how it went:</li>
-            </ul>
-        </section>
+        <!-- Individual Challenges -->
+        <div id="challenge-list"></div>
 
     </div>
 
     <script src="../Scripts/loadsection.js"></script>
+    <script src="../Scripts/loadchallenges.js"></script>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             loadsection("challenges", "challenges-container");
+            loadChallenges();
         });
     </script>
 
