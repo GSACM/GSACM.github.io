@@ -1,9 +1,17 @@
 class PrimaryHeader extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-     <header>
-        <h1>Welcome to ACM</h1>
-        <p>The Association for Computing Machinery - Empowering Students in Tech</p>
+     <header class="main-header">
+
+        <img src="/Images/ACM.png" class="header-logo left-logo" alt="ACM Logo">
+
+        <div class="header-text">
+            <h1>Welcome to ACM</h1>
+            <p>The Association for Computing Machinery - Empowering Students in Tech</p>
+        </div>
+
+        <img src="/Images/ACM.png" class="header-logo right-logo" alt="ACM Logo">
+
     </header>
 
      <!-- Navigation Bar -->
