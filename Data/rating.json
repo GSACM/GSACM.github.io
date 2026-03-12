@@ -1,0 +1,36 @@
+{
+  "ratings": [
+    {
+      "name": "Daniel Gray",
+      "role": "Professor",
+      "enjoyment": 5,
+      "difficulty": 3,
+      "classes": "MATH 2130",
+      "comments": "One of the more complicated math classes I've taken due to many rules to know by name, but after a bit it all clicked and started making a lot of sense."
+    },
+    {
+      "name": "Chris Smith",
+      "role": "Professor",
+      "enjoyment": 4,
+      "difficulty": 1.5,
+      "classes": "ENGL 2135",
+      "comments": "His class was rather easy however you needed to make sure to read the long book he makes you buy as each week requires a discussion post."
+    },
+    {
+      "name": "Zheni Utic",
+      "role": "Professor",
+      "enjoyment": 4,
+      "difficulty": 2,
+      "classes": "STAT 1401",
+      "comments": "Majority of the grade for the class was based on tests but those weren't too bad."
+    },
+    {
+      "name": "Hao Zhang",
+      "role": "Professor",
+      "enjoyment": 4,
+      "difficulty": 3,
+      "classes": "IT 1130",
+      "comments": "Notes can go by very quickly and he doesn't post them online anywhere, so be sure to pay attention."
+    }
+  ]
+}
