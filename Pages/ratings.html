@@ -11,6 +11,7 @@
 </head>
 
 <body>
+
     <primary-header></primary-header>
 
     <div class="container">
@@ -26,7 +27,7 @@
                 style="width:100%; padding:8px; margin-bottom:20px;"
             >
 
-            <!-- Plain HTML table (no CSS needed) -->
+            <!-- Plain HTML table (data loaded from JSON) -->
             <table id="ratingTable" border="1" cellspacing="0" cellpadding="8" width="100%">
                 <thead>
                     <tr>
@@ -39,66 +40,28 @@
                     </tr>
                 </thead>
 
-                <tbody>
-					<tr>
-						<td>Daniel Gray</td>
-						<td>Professor</td>
-						<td>5</td>
-						<td>3</td>
-						<td>MATH 2130</td>
-						<td>
-							One of the more complicated math classes I've taken due to many rules to know by name, 
-							but after a bit it all clicked and started making a lot of sense. Great with communication 
-							and will take the time to answer any questions students have about the content if they ask.
-						</td>
-					</tr>
-
-					<tr>
-						<td>Chris Smith</td>
-						<td>Professor</td>
-						<td>4</td>
-						<td>1.5</td>
-						<td>ENGL 2135</td>
-						<td>
-							His class was rather easy however you needed to make sure to read the long book he makes 
-							you buy as each week requires a discussion post on the 70ish page chapter.
-						</td>
-					</tr>
-
-					<tr>
-						<td>Zheni Utic</td>
-						<td>Professor</td>
-						<td>4</td>
-						<td>2</td>
-						<td>STAT 1401</td>
-						<td>
-							Majority of the grade for the class was based on tests but those weren't too bad. 
-							Solid professor overall and answered questions fairly thoroughly.
-						</td>
-					</tr>
-
-					<tr>
-						<td>Hao Zhang</td>
-						<td>Professor</td>
-						<td>4</td>
-						<td>3</td>
-						<td>IT 1130</td>
-						<td>
-							Tests are a solid mix of multiple choice and open response questions. Notes can go by very 
-							quickly and he doesn't post them online anywhere, so be sure to pay attention in class. 
-							If you have a question and he can't figure it out first try then he isn't much more helpful 
-							after that.
-						</td>
-					</tr>
-				</tbody>
+                <tbody id="ratingBody">
+                    <!-- Ratings will be loaded here -->
+                </tbody>
             </table>
 
         </section>
     </div>
 
 
+    <!-- Load ratings from JSON -->
+    <script src="../Scripts/loadrating.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadrating();
+        });
+    </script>
+
+
     <!-- JS SEARCH + SORT (works with plain HTML) -->
     <script>
+
 		/* SEARCH FILTER */
 		document.getElementById("searchInput").addEventListener("keyup", function () {
 			let filter = this.value.toLowerCase();
@@ -111,18 +74,27 @@
 		});
 
 		/* SORTING with LAST NAME + three-state sorting + arrows */
+
 		const tbody = document.querySelector("#ratingTable tbody");
+
 		// Store original order
-		const originalRows = Array.from(tbody.querySelectorAll("tr"));
+		let originalRows = [];
 
 		document.querySelectorAll("#ratingTable th").forEach((header, index) => {
+
 			// Initialize sort state: 0 = original, 1 = asc, 2 = desc
 			header.dataset.sortState = "0";
 
 			header.addEventListener("click", () => {
+
 				let rows = Array.from(tbody.querySelectorAll("tr"));
 				let sortType = header.getAttribute("data-sort");
 				let state = parseInt(header.dataset.sortState);
+
+				// Save original rows after load
+				if (originalRows.length === 0) {
+					originalRows = rows.slice();
+				}
 
 				// Clear arrows and reset states on other headers
 				document.querySelectorAll("#ratingTable th").forEach(h => {
@@ -138,11 +110,10 @@
 
 				// Update arrow
 				header.textContent = header.textContent.replace(/ ▲| ▼/g, '');
-				if (state === 1) header.textContent += " ▲"; // ascending
-				else if (state === 2) header.textContent += " ▼"; // descending
+				if (state === 1) header.textContent += " ▲";
+				else if (state === 2) header.textContent += " ▼";
 
 				if (state === 0) {
-					// Original order
 					tbody.innerHTML = "";
 					originalRows.forEach(row => tbody.appendChild(row));
 					return;
@@ -150,14 +121,19 @@
 
 				// Sort rows
 				rows.sort((rowA, rowB) => {
+
 					let cellA = rowA.children[index].innerText.trim();
 					let cellB = rowB.children[index].innerText.trim();
 
 					// Name column: last-name sort
 					if (index === 0) {
+
 						let lastA = cellA.split(" ").slice(-1)[0].toLowerCase();
 						let lastB = cellB.split(" ").slice(-1)[0].toLowerCase();
-						return state === 1 ? lastA.localeCompare(lastB) : lastB.localeCompare(lastA);
+
+						return state === 1
+							? lastA.localeCompare(lastB)
+							: lastB.localeCompare(lastA);
 					}
 
 					// Number columns
@@ -166,13 +142,19 @@
 					}
 
 					// Text columns
-					return state === 1 ? cellA.localeCompare(cellB) : cellB.localeCompare(cellA);
+					return state === 1
+						? cellA.localeCompare(cellB)
+						: cellB.localeCompare(cellA);
+
 				});
 
 				tbody.innerHTML = "";
 				rows.forEach(row => tbody.appendChild(row));
+
 			});
+
 		});
+
 	</script>
 
 </body>
