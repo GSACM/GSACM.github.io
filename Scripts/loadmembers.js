@@ -2,7 +2,7 @@ fetch("../Data/members.json")
 .then(response => response.json())
 .then(data => {
 
-    const container = document.getElementById("members-container");
+    const container = document.querySelector(".container");
 
     data.forEach((member, index) => {
 
@@ -30,5 +30,4 @@ fetch("../Data/members.json")
 
     });
 
-})
-.catch(err => console.error("Members failed to load:", err));
+});
