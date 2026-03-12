@@ -11,27 +11,25 @@
 </head>
 
 <body>
+
    <primary-header></primary-header>
 
     <!-- Main Content Section -->
     <div class="container">
 
-        <!-- Meet The Board -->
-        <section id="Board">
-            <h2>Meet The Board</h2>
-            <p>The ACM Board is made up of students who are passionate about technology, learning, and helping others succeed. 
-                We work behind the scenes to plan events, host workshops, and create opportunities for students to connect with peers and 
-                professionals in the computing field. Whether you’re brand new to tech or an experienced programmer, our goal is to make ACM a 
-                welcoming place where everyone can grow and have fun along the way. 
-                For more details, join our <a href="https://discord.gg/7vUXebvc7Q" target="_blank" rel="noopener noreferrer">Discord</a> or <a href="https://groupme.com/join_group/65871319/KRc8iUOk" target="_blank" rel="noopener noreferrer">GroupMe</a>.
-            </p>
-
-        </section>
+        <!-- Meet The Board  -->
+        <div id="board-container"></div>
 
     </div>
 
-    <!-- Fixed script path -->
+    <script src="../Scripts/loadsection.js"></script>
     <script src="../Scripts/loadboard.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            loadsection("meet-board", "board-container");
+        });
+    </script>
 
 </body>
 
