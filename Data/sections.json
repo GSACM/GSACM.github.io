@@ -1,0 +1,39 @@
+{
+  "about": {
+    "title": "About ACM",
+    "content": "The Association for Computing Machinery (ACM) is a global organization that fosters professional development and community for students interested in computer science and technology. Our student chapter provides resources, workshops, networking, and opportunities for growth in the tech field. For more details, join our Discord or GroupMe.",
+    "links": [
+      {"href": "https://discord.gg/7vUXebvc7Q", "text": "Discord"},
+      {"href": "https://groupme.com/join_group/65871319/KRc8iUOk", "text": "GroupMe"}
+    ]
+  },
+  "join": {
+    "title": "Join ACM",
+    "content": "If you're passionate about tech and want to connect with like-minded individuals, consider joining our chapter! We welcome students from all disciplines. Fill out the form below to become a member.",
+    "button": {"text": "Join Now", "link": "https://www.acm.org/join"}
+  },
+  "meet-members": {
+    "title": "Meet The Members",
+    "content": "ACM is more than just its leadership — it’s a community of students who share an interest in technology, creativity, and learning. Our members come from many different majors and experience levels, but they all share a curiosity for computing and a willingness to support one another. From collaborating on projects and attending workshops to exploring new tools and ideas, ACM members help make our organization an engaging and welcoming place for everyone.",
+    "links": [
+      {"href": "https://discord.gg/7vUXebvc7Q", "text": "Discord"},
+      {"href": "https://groupme.com/join_group/65871319/KRc8iUOk", "text": "GroupMe"}
+    ]
+  },
+  "meet-board": {
+    "title": "Meet The Board",
+    "content": "The ACM Board is made up of students who are passionate about technology, learning, and helping others succeed. We work behind the scenes to plan events, host workshops, and create opportunities for students to connect with peers and professionals in the computing field. Whether you’re brand new to tech or an experienced programmer, our goal is to make ACM a welcoming place where everyone can grow and have fun along the way. For more details, join our Discord or GroupMe.",
+    "links": [
+      {"href": "https://discord.gg/7vUXebvc7Q", "text": "Discord"},
+      {"href": "https://groupme.com/join_group/65871319/KRc8iUOk", "text": "GroupMe"}
+    ]
+  },
+  "challenges": {
+    "title": "Member Challenges",
+    "content": "Looking for something to try in your free time? Here are a few challenges and activities you can explore to sharpen your skills, learn something new, or just have fun with technology. Give them a try and see what you can build! To meet more of our members and get involved, join our Discord or GroupMe.",
+    "links": [
+      {"href": "https://discord.gg/7vUXebvc7Q", "text": "Discord"},
+      {"href": "https://groupme.com/join_group/65871319/KRc8iUOk", "text": "GroupMe"}
+    ]
+  }
+}
