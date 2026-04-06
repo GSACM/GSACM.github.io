@@ -1,2 +1,2 @@
 The start of our ACM WebPage.
-https://gsacm.github.io/index.html 
+ https://acm-gsu.github.io/GSACM.github.io/
