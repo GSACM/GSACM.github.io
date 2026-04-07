@@ -2,24 +2,26 @@ function loadsection(sectionKey, containerId) {
     fetch("../Data/sections.json")
         .then(res => res.json())
         .then(data => {
-            if (!data[sectionKey]) return; // nothing to load
+            const section = data[sectionKey];
+            if (!section) return; // nothing to load
             const container = document.getElementById(containerId);
             if (!container) return;
 
-            const section = data[sectionKey];
-
-            let html = `<section id="${sectionKey}">
-                <h2>${section.title}</h2>
-                <p>${section.content}`;
-
-            // Add links if they exist
+            // Replace placeholders with links (handles spaces)
+            let content = section.content;
             if (section.links) {
                 section.links.forEach(link => {
-                    html += ` <a href="${link.href}" target="_blank">${link.text}</a>`;
+                    // Create regex to match placeholder, ignore case
+                    const placeholder = new RegExp(`\\{${link.text.replace(/\s+/g, '\\s*')}\\}`, 'gi');
+                    const anchor = `<a href="${link.href}" target="_blank">${link.text}</a>`;
+                    content = content.replace(placeholder, anchor);
                 });
             }
 
-            html += `</p>`;
+            // Build HTML
+            let html = `<section id="${sectionKey}">
+                <h2>${section.title}</h2>
+                <p>${content}</p>`;
 
             // Add button if it exists
             if (section.button) {
