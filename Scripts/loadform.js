@@ -1,4 +1,4 @@
-function loadContactForm(containerId, formKey) {
+function loadform(containerId, formKey) {
   fetch("../Data/forms.json")  // path to your JSON
     .then(res => res.json())
     .then(data => {
