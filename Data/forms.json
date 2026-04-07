@@ -1,0 +1,48 @@
+{
+  "contactForm": {
+    "title": "Contact Us",
+    "fields": [
+      {
+        "id": "name_field",
+        "name": "name",
+        "type": "text",
+        "placeholder": "Your Name",
+        "label": "Name",
+        "required": true
+      },
+      {
+        "id": "email_field",
+        "name": "email",
+        "type": "email",
+        "placeholder": "you@example.com",
+        "label": "Email",
+        "required": true
+      },
+      {
+        "id": "subject_field",
+        "name": "subject",
+        "type": "text",
+        "placeholder": "Subject",
+        "label": "Subject",
+        "required": false
+      },
+      {
+        "id": "message_area",
+        "name": "message",
+        "type": "textarea",
+        "placeholder": "Your message...",
+        "label": "Message",
+        "required": true,
+        "rows": 6
+      }
+    ],
+    "button": {
+      "text": "Send Message"
+    },
+    "formspree": {
+      "action": "https://formspree.io/f/mgvzbgqr",
+      "subject": "ACM Club Contact Form",
+      "next": "https://youracmwebsite.com/#contact"
+    }
+  }
+}
