@@ -40,7 +40,7 @@
       "text": "Send Message"
     },
     "formspree": {
-      "action": "https://formspree.io/f/mgvzbgqr",
+      "action": "https://formspree.io/f/xreodebb",
       "subject": "ACM Club Contact Form",
       "next": "https://youracmwebsite.com/#contact"
     }
